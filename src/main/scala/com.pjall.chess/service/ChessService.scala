@@ -10,8 +10,12 @@ trait ChessService {
 
   def selectPieceToMove(point: Point):GenericResponse[Piece]
 
-  def retrieveMovePossibilities(point: Point): GenericResponse[Array[Point]]
+  def retrieveMovePossibilities(point: Point): GenericResponse[List[Point]]
 
   def move(toMove: Point, moveTo: Point):GenericResponse[Unit]
+
+  def isInCheck():GenericResponse[Boolean]
+
+  def checkMate(): GenericResponse[Boolean]
 
 }

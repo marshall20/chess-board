@@ -15,13 +15,13 @@ abstract class BoardService {
     board.get(point)
   }
 
-  def movePiece(moveFrom: Point, moveTo: Point): Boolean = {
-    getPiece(moveFrom).exists(p => {
-      board.remove(moveFrom)
-      board.addOne(moveTo -> p)
-      true
-    })
-  }
+  def getBoard() = board.clone()
+
+  def movePiece(moveFrom: Point, moveTo: Point): Boolean = getPiece(moveFrom).exists(p => {
+    board.remove(moveFrom)
+    board.addOne(moveTo -> p)
+    true
+  })
 
   override def toString: String = {
     var boardText = printableBoard()
