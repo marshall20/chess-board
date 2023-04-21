@@ -47,6 +47,7 @@ object PointBuilder {
 }
 
 case class MoveToPoint(point: Point, condition:Option[Piece] => Boolean)
+case class PossibleMovement(moveFrom: Point,moveTo: Point)
 
 object MoveToPoint {
   def apply(point: Point, condition:Option[Piece] => Boolean): MoveToPoint = new MoveToPoint(point, condition)

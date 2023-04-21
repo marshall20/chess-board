@@ -1,10 +1,12 @@
 package com.pjall.chess.service
 
-import com.pjall.chess.model.{Bishop, Horse, King, Pawn, PointBuilder, Queen, Tower}
+import com.pjall.chess.model.{Bishop, Horse, King, Pawn, Piece, Point, PointBuilder, Queen, Tower}
 
-class ChessBoardService extends BoardService {
+import scala.collection.mutable
 
-  override def newGame(): Unit = {
+class BasicChessBoardService extends GenericBoardService {
+
+  override def newGame(board: mutable.Map[Point, Piece]): mutable.Map[Point, Piece] = {
 
     val whitesTeam = (y:Int) => if (y < 3) true else false
 
@@ -24,6 +26,7 @@ class ChessBoardService extends BoardService {
         case _ =>
       }
     }
+    board
   }
 
 

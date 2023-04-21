@@ -16,6 +16,6 @@ trait ChessService {
 
   def isInCheck():GenericResponse[Boolean]
 
-  def checkMate(): GenericResponse[Boolean]
+  def isCheckMate(): GenericResponse[Boolean]
 
 }
